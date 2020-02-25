@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Education for all">
+    <meta name="author" content="Pankaj">
+
+    <title>eVidya</title>
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+    <script>var APP_URL = "http://15.206.80.44";</script>
+    <script>
+        var module_id = "3";
+    </script>
+
+    <script src="scripts/external/jquery-3.4.1.min.js"></script>
+    <script src="scripts/external/jquery-ui-1.12.1.min.js"></script>
+    <script src="scripts/cookie_handling.js"></script>
+    <script src="scripts/external/jquery.loadingModal.js"></script>
+
+    <script
+            src="scripts/external/bootstrap-4.4.1.min.js"></script>
+    <link rel="stylesheet" href="styles/external/font-awesome-4.7.0.min.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/external/bootstrap-4.1.3.min.css">
+    <link rel="stylesheet" href="styles/external/jquery.loadingModal.css">
+    <link rel="stylesheet" href="styles/image_association.css">
+    <link rel="stylesheet" href="styles/emoji.css">
+    <link rel="stylesheet" href="styles/rating.css">
+    <link rel="stylesheet" href="styles/gif_modal.css">
+</head>
+<body oncontextmenu="return false;">
+  <nav>
+    <div class="logo"><img src="images/logo.svg" alt=""></div>
+    <div class="menu">
+      <a href="#">Home</a>
+      <a href="#">Gallery</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </div>
+  </nav>
+
+<!-- div for overlay quiz start hone se phle the full video description will be controlled by this div.also onlick event has been added
+the moment we click on the overlay it will directly reach out to the original quiz page  -->
+ <div id="myNav" class="overlay" onclick="closenav()">
+
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="overlay-content">
+        <video id="gif" loop>
+            <source src="storage/videos/image_association_phase2.mp4" type="video/mp4">
+        </video>
+<!-- <img src="mickyhello.gif" alt="" id="imh" loop> -->
+    </div>
+    <!-- <img src="mickyhello.gif" alt="" loop> -->
+</div>
+<div class="container module-container">
+    <div class="row">
+        <div class="col-sm-2 bg-ligh">
+            <nav class="navit">
+                <a class="nav-link active" href="#">E-Vidya</a>
+                <a class="nav-link" href="#">Activities</a>
+                <a class="nav-link" href="#">Help</a>
+                <a class="nav-link " href="#">About</a>
+            </nav>
+        </div>
+        <div class="col-sm-7">
+            <div id="module1-panel">
+                <div class="row not-start justify-content-center">
+                    <img id="question_image" src="">
+                </div>
+                <div class="row not-start justify-content-center">
+                    <div id="fillBlanks" class="col-auto blanks">
+                    </div>
+                </div>
+                <div id="shuffledArray" class="row boxes not-start">
+
+                </div>
+                <div class="row justify-content-center not-start">
+                    <!-- <button id="nextStageButton" type="button" class="btn btn-secondary btn-lg next-stage-btn">
+                        NEXT -->
+                    <!-- </button> -->
+                    <a href="#" id="nextStageButton">NEXT</a>
+                    <a href="#" id="resetButton">RESET</a>
+                    <!-- <button id="resetButton" type="button" class="btn btn-secondary btn-lg next-stage-btn">RESET
+                    </button> -->
+                </div>
+                <div class="row justify-content-center">
+                  <a href="#" id="startBtn">Start</a>
+
+                    <!-- <input  type="submit">
+                  </input> -->
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 bg-ligh">
+            <div class="row justify-content-center avatar-row">
+                <div class="col align-self-center">
+                    <div class="newtooltip">
+                        <div class="audio-btn" id="audio_button">
+                            <span> <i class="fa fa-volume-up vol-btn__icon" style="font-size:15px;"></i></span>
+                        </div>
+                        <div id="cssHead">
+                            <div class="cssEye leftEye">
+                                <div class="cssEyeLid">
+                                    <div class="cssPupil">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cssEye rightEye">
+                                <div class="cssEyeLid">
+                                    <div class="cssPupil">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cssMouth">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center star-rating">
+                <!-- ★ \2605 unicode -->
+                <span id="star">☆</span>
+                <!-- <span>☆</span>
+                <span>☆</span>
+                <span>☆</span>
+                <span>☆</span> -->
+                <span id="star_counter">0</span>
+            </div>
+        </div>
+    </div>
+</div>
+<audio id="loop_audio_player">
+    <!-- <source src='http://hi5.1980s.fm/;' type='audio/mpeg'/> -->
+</audio>
+<audio id="options_click_player">
+    <!-- <source src='http://hi5.1980s.fm/;' type='audio/mpeg'/> -->
+</audio>
+<audio id="star_player">
+</audio>
+<script src = "scripts/api_throttling.js"></script>
+<script src = "scripts/audio.js"></script>
+<script src = "scripts/gif_modal.js"></script>
+<script src="scripts/image_association.js"></script>
+
+</body>
+</html>
