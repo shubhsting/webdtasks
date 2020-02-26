@@ -1,6 +1,6 @@
 
 body{
-  background-image: url(backgroundproject.jpg);
+  background-image: url(backgroundnew.webp);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -20,7 +20,7 @@ img[src=""], .not-start {
 }
 
 #startBtn,#resetButton,#nextStageButton{
-  background-color: #00b894;
+  background-color: orange;
   color: black;
 
     padding: 12px 30px;
@@ -36,14 +36,17 @@ img[src=""], .not-start {
 }
 nav{
   width: 100%;
-  height: 15vh;
+  height: 10vh;
   color: black;
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-transform: uppercase;
+  margin-bottom: 100px;
   /* background-color: #4E3939; */
-
+}
+.one{
+  background-color: orange;
 }
 nav .logo{
   width: 25%;
@@ -51,10 +54,38 @@ nav .logo{
   /* text-align: center; */
 
 }
+.search{
+  /* background-color: white; */
+  /* height: 100%; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+}
+.search input{
+  height: 10vh;
+  width: 200px;
+  font-weight: bold;
+  font-family: 'Gloria Hallelujah';
+}
+/* .search button{
+  height: 10vh;
+  width: 50px;
+} */
 nav .menu{
   width: 40%;
   display: flex;
   justify-content: space-around;
+  /* background-color: #2EEEDC; */
+  background-color: #34CBBD;
+  height: 100%;
+  width: 50%;
+  align-items: center;
+  margin-left: 0;
+
+}
+.menu .fir{
+  margin-left: 10px;
 }
 nav .menu a{
   text-decoration: none;
@@ -62,6 +93,7 @@ nav .menu a{
   color: white;
   font-weight: bold;
   font-family: 'Gloria Hallelujah';
+
 }
 
 
@@ -146,7 +178,26 @@ nav a{
 
 }
 
+.second,.first,.third{
 
+  text-shadow: 3px;
+  border: 3px solid white;
+  border-radius: 3px;
+  position: relative;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Gloria Hallelujah';
+
+}
+
+#question_image{
+
+  color: white;
+  /* text-align: center; */
+  /* text-shadow: 2px 2px 2px 2px white; */
+  width: 300px;
+  /* height: 300px; */
+}
 
 
 .blank {

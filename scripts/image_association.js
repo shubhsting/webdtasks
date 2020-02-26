@@ -4,7 +4,10 @@ const eleBlanks = document.getElementById('fillBlanks'),
     eleNextStageButton = document.getElementById('nextStageButton'),
     eleCssHead = document.getElementById('cssHead'),
     eleResetButton = document.getElementById('resetButton'),
-    eleImage = document.getElementById('question_image')
+    eleImage = document.getElementById('question_image'),
+    elefirst=document.getElementById('firh'),
+    elethird=document.getElementById('thirh');
+
 
 var startBtnClickCount = 0;
 // const eleImageCaption = document.getElementById('captionImage')
@@ -19,7 +22,7 @@ var api_token;
 
 // static elements
 const domainName = APP_URL
-let getURL = domainName + "/api/v2/english/" + module_id + "/1/get_data"
+let getURL = "http://15.206.80.44/api/v2/english/8/1/get_data"
 let postURL = domainName + "/api/v2/english/" + module_id + "/1/post_user_response"
 let currentData,
     startTime, correctAnswer, userAnswer, questionId, status, isAnswerCorrect = false;
@@ -44,7 +47,7 @@ const updateInput = (event) =>{
     input.value = event.target.innerText
 	userAnswer = input.value
 }
-  
+
 const setModule = () =>{
 
     eleBlanks.innerHTML = ""
@@ -53,9 +56,11 @@ const setModule = () =>{
     // const question = currentData.question
     correctAnswer = currentData.answer.toString()
     correctAnswer = correctAnswer.toLowerCase()
-    const optionsArray = currentData.options
+    const optionsArray = currentData.shuffled
 
     eleImage.setAttribute("src",currentData.asset)
+    elefirst.append(currentData.question[0].value);
+    elethird.append(currentData.question[2].value);
 
     const requiredAnswer = makeElement('input', `question`, 'col-auto blank-input')
     // requiredAnswer.addEventListener('change', speakWord)
@@ -66,7 +71,7 @@ const setModule = () =>{
         day.addEventListener('click', updateInput)
         day.addEventListener('click', function (){option_click_sound(currentData.options_mp3[i]);})
         eleShuffledArray.append(day)
-    }   
+    }
 }
 
 const resetModule = (event) =>{
@@ -85,15 +90,7 @@ const updateUserData = (dataObject) => {
 }
 
 const getMethod = (url) => {
-    /*fetch(url, {
-        headers: {
-            'Accept': 'application/json',
-            'Authorization': api_token
-        },        
-    })
-        .then(res => res.json())
-        .then(data => updateUserData(data.data))
-        .catch(err => console.log('we got a error in Get Method', err))*/
+
     set_load_screen();
     $.ajax({
         url: url,
@@ -103,8 +100,8 @@ const getMethod = (url) => {
             'Accept': 'application/json'
         },
         success: function (response) {
-            // console.log(response);
-            // console.log("GOT GET RESPONSE SUCCESSFULLY");
+            console.log(response);
+            console.log("GOT GET RESPONSE SUCCESSFULLY");
             destroy_load_screen();
             updateUserData(response.data)
         },
@@ -116,10 +113,10 @@ const getMethod = (url) => {
 
 const postMethod = (url) => {
     let data = {
-        start_time: startTime, 
-        end_time: endTime, 
+        start_time: startTime,
+        end_time: endTime,
         user_response: userAnswer,
-        question_id: questionId,  
+        question_id: questionId,
     }
     // console.log(data);
 
@@ -134,7 +131,7 @@ const postMethod = (url) => {
         data: data,
         // contentType: 'application/json; charset=utf-8',
         success: function (response) {
-            // console.log("GOT POST RESPONSE SUCCESSFULLY",response);
+            // console.log("GOT POST RESPONSE SUCCESSFULLY");
             destroy_load_screen();
             handlePostResponse(response.data)
         },
@@ -177,8 +174,8 @@ const validateAnswer = (event)=>{
         eleNextStageButton.classList.remove('next-stage-btn-wobbel')
         // voiceAssistant(`Congratulations!! correct answer.`)
         // setUserData(new Date(), 0)
-        
-        
+
+
         eleCssHead.classList.add('right-ans')
         star_success();
         setTimeout(() => {

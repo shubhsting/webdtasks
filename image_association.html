@@ -36,10 +36,15 @@
     <link rel="stylesheet" href="styles/gif_modal.css">
 </head>
 <body oncontextmenu="return false;">
-  <nav>
+  <nav class="one">
     <div class="logo"><img src="images/logo.svg" alt=""></div>
+    <div class="search">
+      <input type="text" name="" value="Search" >
+      <span class="searchlog"></span>
+    </div>
+
     <div class="menu">
-      <a href="#">Home</a>
+      <a href="#" class="fir">Home</a>
       <a href="#">Gallery</a>
       <a href="#">About</a>
       <a href="#">Contact</a>
@@ -72,7 +77,17 @@ the moment we click on the overlay it will directly reach out to the original qu
         <div class="col-sm-7">
             <div id="module1-panel">
                 <div class="row not-start justify-content-center">
-                    <img id="question_image" src="">
+                    <div id="question_image">
+                    <div class="first">
+                      <h3 id="firh"></h3>
+                    </div>
+                    <div class="second">
+                      <h3 id="search">??</h3>
+                    </div>
+                    <div class="third">
+                      <h3 id="thirh"></h3>
+                    </div>
+                  </div>
                 </div>
                 <div class="row not-start justify-content-center">
                     <div id="fillBlanks" class="col-auto blanks">
